@@ -36,6 +36,8 @@ searchForm.addEventListener('submit', async (event) => {
     createGallery(data.hits);
     if (totalHits > 15) {
       showLoadMoreButton();
+    } else {
+      iziToast.info({ message: "We're sorry, but you've reached the end of search results." });
     }
   } catch (error) {
     iziToast.error({ message: "An error occurred. Please try again later." });
